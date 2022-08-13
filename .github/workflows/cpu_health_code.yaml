@@ -21,7 +21,8 @@ jobs:
       - name: Run
         env:
           BOT_KEY: ${{ secrets.BOT_KEY_CPU_HEALTH_CODE }}
-          BOT_MODE: markdown
         run: |
+          python ./src/set_mention.py MENTIONED MENTIONED_MOBILE 1 1
+          python ./src/main.py text
           python ./src/cpu_health_code.py
-          python ./src/main.py
+          python ./src/main.py markdown

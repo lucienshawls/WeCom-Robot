@@ -1,7 +1,5 @@
-import os
-from mybase_lucien import mylocale
-MYDIR = os.path.dirname(mylocale.get_dir(myfile=__file__))
-
+import base
+from base import MYDIR
 def read_data(mode):
     json_data = {
         'msgtype': mode,
@@ -31,10 +29,9 @@ def send_msg(key,json_data):
     import requests
     response = requests.post(url_base, params=params, json=json_data)
     return response
-def main():
-    mode = os.getenv('BOT_MODE')
+def main(mode):
     key = os.getenv('BOT_KEY')
     resp = send_msg(key,read_data(mode))
 
 if __name__=='__main__':
-    main()
+    main(sys.argv[1])
