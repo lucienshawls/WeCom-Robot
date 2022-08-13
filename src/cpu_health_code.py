@@ -1,4 +1,5 @@
-import main
+import base
+from base import *
 import datetime
 WEEKDAYS = ['日','一','二','三','四','五','六',]
 cst_now = datetime.datetime.now(tz=datetime.timezone(datetime.timedelta(hours=8)))
@@ -25,5 +26,5 @@ mystr += '''\
 [点此查看校历(WEB)](https://jwc.cpu.edu.cn/7f/81/c867a163713/page.htm)  
 [点此查看校历(PDF)](https://jwc.cpu.edu.cn/_upload/article/files/02/9f/78d41abf468980a72214bd411edf/9b54e4b6-1269-4d03-a4d9-6e14c8e74d50.pdf)
 '''
-with open(main.MYDIR + '/msg/msg.md','w',encoding='utf-8') as f:
+with open(MYDIR + '/msg/msg.md','w',encoding='utf-8') as f:
     f.write(mystr)
