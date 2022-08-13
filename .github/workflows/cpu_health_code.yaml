@@ -5,7 +5,7 @@ on:
   workflow_dispatch:
 jobs:
   publish:
-    name: Publish_Release_and_Upload_to_PyPI
+    name: 提醒健康打卡
     runs-on: ubuntu-20.04
     steps:
       - name: Checkout Source
@@ -20,7 +20,7 @@ jobs:
           pip install -r ./requirements.txt
       - name: Run
         env:
-          BOT_KEY: ${{ BOT_KEY_CPU_HEALTH_CODE }}
+          BOT_KEY: ${{ secrets.BOT_KEY_CPU_HEALTH_CODE }}
           BOT_MODE: markdown
         run: |
           python ./src/cpu_health_code.py

@@ -31,7 +31,10 @@ def send_msg(key,json_data):
     import requests
     response = requests.post(url_base, params=params, json=json_data)
     return response
+def main():
+    mode = os.getenv('BOT_MODE')
+    key = os.getenv('BOT_KEY')
+    resp = send_msg(key,read_data(mode))
 
-mode = os.getenv('BOT_MODE')
-key = os.getenv('BOT_KEY')
-resp = send_msg(key,read_data(mode))
+if __name__=='__main__':
+    main()
