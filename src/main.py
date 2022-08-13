@@ -8,14 +8,14 @@ def read_data(mode):
         mode: {}
     }
     if mode == 'text':
-        with open(MYDIR + "/msg/msg.txt", "r") as f:
+        with open(MYDIR + "/msg/msg.txt", "r",encoding='utf-8') as f:
             json_data[mode]['content'] = f.read()
-        with open(MYDIR + "/msg/mentioned.list", "r") as f:
+        with open(MYDIR + "/msg/mentioned.list", "r",encoding='utf-8') as f:
             json_data[mode]['mentioned_list'] = f.read().strip().split('\n')
-        with open(MYDIR + "/msg/mentioned_mobile.list", "r") as f:
+        with open(MYDIR + "/msg/mentioned_mobile.list", "r",encoding='utf-8') as f:
             json_data[mode]['mentioned_mobile_list'] = f.read().strip().split('\n')
     elif mode == 'markdown':
-        with open(MYDIR + "/msg/msg.md", "r") as f:
+        with open(MYDIR + "/msg/msg.md", "r",encoding='utf-8') as f:
             json_data[mode]['content'] = f.read()
     elif mode == 'image':
         pass
