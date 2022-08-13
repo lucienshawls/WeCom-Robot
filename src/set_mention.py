@@ -1,6 +1,6 @@
 # python ./src/set_mention.py env_for_mentioned_list env_for_mentioned_mobile_list 1/0(mention all) 1/0(mention now)
 import base
-from base import MYDIR
+from base import *
 def mystr(exp):
     if exp is None:
         return ''

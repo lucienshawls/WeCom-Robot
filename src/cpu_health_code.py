@@ -1,5 +1,5 @@
 import base
-from base import MYDIR
+from base import *
 import datetime
 WEEKDAYS = ['日','一','二','三','四','五','六',]
 cst_now = datetime.datetime.now(tz=datetime.timezone(datetime.timedelta(hours=8)))

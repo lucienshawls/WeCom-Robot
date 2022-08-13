@@ -1,5 +1,5 @@
 import base
-from base import MYDIR
+from base import *
 def read_data(mode):
     json_data = {
         'msgtype': mode,
