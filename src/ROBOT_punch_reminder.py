@@ -42,7 +42,7 @@ if dd > 2:
     mystr += '''\
 [点此查看已提交的返校申请](https://xuegong.cpu.edu.cn/app/309)
 '''
-dd = 4 # test
+
 if dd >= 7 and dd <= 11:
     mystr += '''\
 请注意：2022年08月22日是返校申请可提交的最后一天，距此还剩**%d**天。  
