@@ -12,8 +12,8 @@ d = cst_now.strftime('%d')
 w = WEEKDAYS[int(cst_now.strftime('%w'))]
 
 mystr = '''\
-# 药康码打卡
-今天是**%s年%s月%s日星期%s**，请记得填写药康码。  
+# 打卡提醒
+**%s年%s月%s日星期%s**，今天也要记得填写药康码哦！  
 ''' %(Y,m,d,w)
 
 cst_today = datetime.datetime.strptime('%s-%s-%s'%(Y,m,d), '%Y-%m-%d').astimezone(tz)
@@ -40,15 +40,13 @@ if dd > 2:
 ''' %(dd-2)
 
     mystr += '''\
-
------------------
 [点此查看已提交的返校申请](https://xuegong.cpu.edu.cn/app/309)
 '''
+
 if dd >= 7 and dd <= 11:
     mystr += '''\
 请注意：2022年8月22日是返校申请可提交的最后一天，距此还剩**%d**天。  
 ''' %(dd-7)
-
 
 with open(MYDIR + '/msg/msg.md','w',encoding='utf-8') as f:
     f.write(mystr)
