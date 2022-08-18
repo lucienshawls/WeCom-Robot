@@ -39,11 +39,15 @@ if dd > 2:
 今天距离2022年8月27日返校日还有**%d**天。  
 ''' %(dd-2)
 
+    mystr += '''\
+
+-----------------
+[点此查看已提交的返校申请](https://xuegong.cpu.edu.cn/app/309)
+'''
 if dd >= 7 and dd <= 11:
     mystr += '''\
 请注意：2022年8月22日是返校申请可提交的最后一天，距此还剩**%d**天。  
 ''' %(dd-7)
-
 
 
 with open(MYDIR + '/msg/msg.md','w',encoding='utf-8') as f:
