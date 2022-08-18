@@ -28,9 +28,23 @@ if dd > 0:
 ''' %(dd)
 
 mystr += '''\
-[点此查看校历(WEB)](https://jwc.cpu.edu.cn/7f/81/c867a163713/page.htm)  
-[点此查看校历(PDF)](https://jwc.cpu.edu.cn/_upload/article/files/02/9f/78d41abf468980a72214bd411edf/9b54e4b6-1269-4d03-a4d9-6e14c8e74d50.pdf)
+[点此查看校历(WEB)]("https://jwc.cpu.edu.cn/7f/81/c867a163713/page.htm")  
+[点此查看校历(PDF)]("https://jwc.cpu.edu.cn/_upload/article/files/02/9f/78d41abf468980a72214bd411edf/9b54e4b6-1269-4d03-a4d9-6e14c8e74d50.pdf")
 '''
+
+if dd > 2:
+    mystr += '''\
+
+-----------------
+今天距离2022年8月27日返校日还有**%d**天。  
+''' %(dd-2)
+
+if dd >= 7 and dd <= 11:
+    mystr += '''\
+请注意：2022年8月22日是返校申请可提交的最后一天，距此还剩**%d**天。  
+''' %(dd-7)
+
+
 
 with open(MYDIR + '/msg/msg.md','w',encoding='utf-8') as f:
     f.write(mystr)
