@@ -1,11 +1,11 @@
-name: 提醒健康打卡
+name: 打卡提醒
 on:
   schedule: 
     - cron: '0 12 * * *'
   workflow_dispatch:
 jobs:
   publish:
-    name: 提醒健康打卡
+    name: 提醒打卡
     runs-on: ubuntu-20.04
     steps:
       - name: Checkout Source
@@ -24,5 +24,5 @@ jobs:
         run: |
           python ./src/set_mention.py MENTIONED MENTIONED_MOBILE 1 1
           python ./src/main.py text
-          python ./src/ROBOT_cpu_health_code.py
+          python ./src/ROBOT_punch_reminder.py
           python ./src/main.py markdown
